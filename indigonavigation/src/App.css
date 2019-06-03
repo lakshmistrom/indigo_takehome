@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+}
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #01426A;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+.icon {
+  padding: 14px 16px;
+  background-color: #01426A;
+  color: white;
+  border: none;
+}
+.mt-5{
+  margin-top: 6rem;
+}
+.greeting-container {
+  position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: stretch;
+}
+.greeting-centered-text{
+  position: absolute;
+  top: -13px;
+  left: 10px;
+  color: white;
+}
+.greeting-centered-text p {
+  font-weight: bold;
+  text-shadow: 1px 1px #01426A;
+}
+ul#menu{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#menu li {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 0;
+  background-color: #2675A6;
+  color: white;
+  font-weight: bold;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background-color: #01426A;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 65px;
+}
+.grow-10{
+  flex-basis: 64%;
+}
+.grow-1{
+  flex-basis: 16%;
+}
+.padding-15{
+  padding: 0 15px;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
