@@ -36,6 +36,7 @@ nav a {
   text-align: center;
   justify-content: center;
   align-items: stretch;
+  opacity: 0.8;
 }
 .greeting-centered-text{
   position: absolute;
@@ -51,16 +52,30 @@ ul#menu{
   list-style-type: none;
   padding: 0;
   margin: 0;
+  transition: margin-left .5s;
 }
-#menu li {
+#menu li , #second-nav-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #2675A6;
+  color: white;
+  font-weight: bold;
+}
+#menu li:hover{
+  background-color: white;
+  color: #2675A6;
+}
+#second-nav-header {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 17px 0;
   background-color: #2675A6;
   color: white;
   font-weight: bold;
+  padding: 5px 15px 4px 15px;
 }
 .sidenav {
   height: 100%;
@@ -74,14 +89,80 @@ ul#menu{
   transition: 0.5s;
   padding-top: 65px;
 }
+.from-left-side-nav{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 127px;
+  right: 0;
+  background-color: #01426A;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.white {
+  color: white;
+}
 .grow-10{
-  flex-basis: 64%;
+  flex-basis: 68%;
 }
 .grow-1{
   flex-basis: 16%;
 }
-.padding-15{
-  padding: 0 15px;
+.py-15{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.px-22{
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+.opaque-button{
+  background-color: #49AABF;
+  opacity: 0.3;
+  color: white;
+  border: none;
+}
+.opaque-button:hover{
+  background-color: white;
+  opacity: 1;
+  color: #2675A6;
+}
+
+.dropdown-btn {
+  padding: 15px 30px 14px 20px;
+  text-decoration: none;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold; 
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+.dropdown-container {
+  display: flex;
+  max-height: 0px;
+  height: auto;
+  overflow: hidden;
+  background-color: #262626;
+  padding-left: 8px;
+  transition: max-height 0.5s;
+}
+.dropdown-container-active{
+  display: flex;
+  max-height: 300px;
+  height: auto;
+  overflow: hidden;
+  background-color: #262626;
+  padding-left: 8px;
+  transition: max-height 0.8s;
 }
 @keyframes App-logo-spin {
   from {
