@@ -4,6 +4,7 @@ import logo from './assets/images/alaska-airlines-squarelogo-1453767867811.png';
 import sky from './assets/images/sky.png';
 import './App.css';
 import { NAV_DATA } from './menu';
+import SingleDropDownItem from "./components/SingleDropDownItem";
 
 export default class App extends Component {
 
@@ -27,19 +28,14 @@ export default class App extends Component {
     );
   }
   renderOpenClose() {
-    if (this.state.navShowing) {
-      return (
-        <button className="icon" onClick={() => this.closeNav()}>
-          <i className="fas fa-times fa-2x"></i>
-        </button>
-      );
-    } else {
-      return (
-        <button className="icon" onClick={() => this.openNav()}>
-          <i className="fas fa-bars fa-2x"></i>
-        </button>
-      );
-    }
+    let click = () => this.state.navShowing ? this.closeNav() : this.openNav();
+    let icon = this.state.navShowing ? "fa-times" : "fa-bars";
+
+    return (
+      <button className="icon" onClick={click}>
+        <i className={`fas ${icon} fa-2x`}></i>
+      </button>
+    );
   }
   renderPrimaryNav() {
     return (
@@ -71,36 +67,7 @@ export default class App extends Component {
         </div>
         {
           this.state.secondaryNavOptions.map(element => {
-            return (
-              <div key={element.title}>
-                <button className="dropdown-btn" onClick={(e) => {
-                  let button = e.target.parentElement;
-                  button.classList.toggle("active");
-                  console.log(button);
-                  let dropDownContent = button.nextElementSibling;
-                  console.log(dropDownContent);
-                  if (dropDownContent.classList.contains("dropdown-container")) {
-                    dropDownContent.classList.add("dropdown-container-active");
-                    dropDownContent.classList.remove("dropdown-container");
-                  } else {
-                    dropDownContent.classList.add("dropdown-container");
-                    dropDownContent.classList.remove("dropdown-container-active");
-                  }
-                }}>
-                  {element.title}
-                  <i className="fas fa-chevron-down fa-sm"></i>
-                </button>
-                <div className="dropdown-container">
-                  <ul>
-                    {
-                      element.options.map(option => {
-                        return <li key={option}>{option}</li>;
-                      })
-                    }
-                  </ul>
-                </div>
-              </div>
-            );
+            return <SingleDropDownItem dropDownItem={element} key={element.title} />;
           })
         }
       </div>
@@ -123,18 +90,5 @@ export default class App extends Component {
   closeSubNav() {
     document.getElementById("fromRight").style.width = "0";
     document.getElementById("menu").style.marginright = "0";
-  }
-  dropDown() {
-    let dropdowns = document.getElementsByClassName("dropdown-btn");
-    console.log(dropdowns);
-    dropdowns.forEach((dropdown) => {
-      dropdown.addEventListener("click", () => { this.classList.toggle("active") });
-      let dropDownContent = this.nextElementSibling;
-      if (dropDownContent.style.display === "block") {
-        dropDownContent.style.display = "none";
-      } else {
-        dropDownContent.style.display = "block";
-      }
-    });
   }
 }

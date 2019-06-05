@@ -24,11 +24,15 @@ export const NAV_DATA = {
                 },
                 {
                     title: "Agriculture and Customs",
-                    options: []
+                    options: [
+                        "Regulations"
+                    ]
                 },
                 {
                     title: "Known Crewmember",
-                    options: []
+                    options: [
+                        "Awards"
+                    ]
                 },
                 {
                     title: "Product Safety Data Search",
@@ -45,15 +49,21 @@ export const NAV_DATA = {
             options: [
                 {
                     title: "OJI and Leaves",
-                    options: []
+                    options: [
+                        "Time-Off"
+                    ]
                 },
                 {
                     title: "Pay and Benefits",
-                    options: []
+                    options: [
+                        "Pay Stubs"
+                    ]
                 },
                 {
                     title: "Performance",
-                    options: []
+                    options: [
+                        "Per Quarter"
+                    ]
                 },
                 {
                     title: "Inflict Resource Directory",
@@ -61,7 +71,9 @@ export const NAV_DATA = {
                 },
                 {
                     title: "Mobile and Web",
-                    options: []
+                    options: [
+                        "Permissions"
+                    ]
                 },
                 {
                     title: "AFA",

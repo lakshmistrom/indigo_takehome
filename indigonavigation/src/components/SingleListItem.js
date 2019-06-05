@@ -1,12 +1,6 @@
 import React, { Component } from "react";
-import { NAV_DATA } from '../menu';
 
 export default class SingleListItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { data: NAV_DATA.data }
-    }
-    componentDidMount() { }
     render() {
         return (
             <li id="#list-item" className={this.addPadding()}>
